@@ -1,0 +1,44 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    animation: welcome-animation 1s ease-in-out;
+}
+
+.landing-page h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #00b8d4;
+}
+
+.landing-page p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #bdbdbd;
+}
+
+.landing-page button {
+    background-color: #00b8d4;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+}
+
+.landing-page button:hover {
+    background-color: #0091c2;
+}
+
+@keyframes welcome-animation {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
