@@ -7,7 +7,12 @@ import OrderSubmission from './OrderSubmission';
 class InventoryTable extends Component {
     constructor(props) {
         super(props);
-        this.state = { inventoryPieces: [], selectedEquipmentId: '', selectedMake: '', selectedModel: '' };
+        this.state = {
+            inventoryPieces: [],
+            selectedEquipmentId: '',
+            selectedMake: '',
+            selectedModel: ''
+        };
     }
 
     componentDidMount() {
@@ -20,9 +25,11 @@ class InventoryTable extends Component {
             });
     }
 
-    handleRowClick = (id, make, model) => {
-        // Update the equipmentId in OrderSubmission component
+    handleRowClick = (id, make, model, pricePerHour, pricePerDay) => {
+        // update the equipmentId and prices in OrderSubmission component
         this.orderSubmission.updateEquipmentId(id);
+        this.orderSubmission.updatePrices(pricePerHour, pricePerDay);
+        // update id, make, model in this Component
         this.setState({ selectedEquipmentId: id });
         this.setState({ selectedMake: make });
         this.setState({ selectedModel: model });
@@ -33,7 +40,7 @@ class InventoryTable extends Component {
     render() {
         return (
             <div>
-                {/* Pass a reference to the OrderSubmission component to this.orderSubmission */}
+                {/* pass a reference to OrderSubmission component to this.orderSubmission */}
                 <OrderSubmission ref={(el) => this.orderSubmission = el} />
                 <div>
                     <h2 className='heading'>Available Inventory</h2>
@@ -53,7 +60,7 @@ class InventoryTable extends Component {
                     </thead>
                     <tbody>
                         {this.state.inventoryPieces.map(inventory => (
-                            <tr key={inventory.id} onClick={() => this.handleRowClick(inventory.id, inventory.make, inventory.model)}>
+                            <tr key={inventory.id} onClick={() => this.handleRowClick(inventory.id, inventory.make, inventory.model, inventory.pricePerHour, inventory.pricePerDay)}>
                                 <td>{inventory.id}</td>
                                 <td>{inventory.make}</td>
                                 <td>{inventory.model}</td>

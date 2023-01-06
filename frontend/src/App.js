@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import CustomersTable from "./CustomersTable";
 import InventoryTable from "./InventoryTable";
 import LandingPage from "./LandingPage";
-import OrderSubmission from "./OrderSubmission";
+import OrderDetails from "./OrderDetails";
 import StaffTable from "./StaffTable";
 
 
@@ -18,7 +18,7 @@ class App extends Component {
           <Route exact path='/inventory' component={InventoryTable} />
           <Route exact path='/customers' component={CustomersTable} />
           <Route exact path='/staff' component={StaffTable} />
-          <Route exact path='/submission' component={OrderSubmission} />
+          <Route exact path='/details' component={OrderDetails} />
         </Switch>
       </div>
     );

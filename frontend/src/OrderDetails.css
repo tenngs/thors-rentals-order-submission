@@ -1,0 +1,58 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2em;
+    color: #00b8d4;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 1.75em;
+    color: #00b8d4;
+    margin-bottom: 5px;
+}
+
+input {
+    font-size: 1.75em;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+
+}
+
+/* input[type="number"].scrollable::-webkit-inner-spin-button,
+input[type="number"].scrollable::-webkit-outer-spin-button {
+    -webkit-appearance: bold;
+    margin: 0;
+} */
+
+.instructions {
+    font-size: 1.75em;
+    color: #bdbdbd;
+    text-align: center;
+    padding: 20px;
+    /* animation: slideUp 1s ease-out 1s, fadeIn 2s ease-in-out; */
+    animation: slideUp 1s;
+}
+
+button {
+    background-color: #00b8d4;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #0091c2;
+}

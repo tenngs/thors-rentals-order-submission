@@ -76,7 +76,7 @@ class StaffTable extends Component {
                         : <div className='instructions'>Please choose a staff member that made the sale by clicking on it</div>
                     }
                     {this.state.selectedStaffId
-                        ? <Link to="/submission"><button className='continue-button'>Continue</button></Link>
+                        ? <Link to="/details"><button className='continue-button'>Continue</button></Link>
                         : null
                     }
                 </div>
