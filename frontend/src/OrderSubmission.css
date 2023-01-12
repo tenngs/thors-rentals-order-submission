@@ -1,4 +1,4 @@
-form {
+.order-summary {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,29 +10,10 @@ h2 {
     margin-bottom: 10px;
 }
 
-label {
+p {
     font-size: 1.75em;
     color: #00b8d4;
     margin-bottom: 5px;
-}
-
-input {
-    font-size: 1.75em;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    outline: none;
-
-}
-
-.instructions {
-    font-size: 1.75em;
-    color: #bdbdbd;
-    text-align: center;
-    padding: 20px;
-    /* animation: slideUp 1s ease-out 1s, fadeIn 2s ease-in-out; */
-    animation: slideUp 1s;
 }
 
 button {

@@ -1,4 +1,11 @@
 import { Component } from 'react';
+import CustomersTable from './CustomersTable';
+import InventoryTable from './InventoryTable';
+import OrderDetails from './OrderDetails';
+import "./OrderSubmission.css";
+import StaffTable from './StaffTable';
+
+
 
 class OrderSubmission extends Component {
     constructor(props) {
@@ -12,38 +19,39 @@ class OrderSubmission extends Component {
             pricePerHour: '',
             pricePerDay: '',
             cost: '',
-            returnDateTIme: ''
+            returnDateTime: ''
+
         };
+        // this.onEquipmentIdChange = this.onEquipmentIdChange.bind(this);
+
     }
 
-    // methods to update equipmentId, CustomerId and staffId state with ids
-    // passed from respective Table components 
-    updateEquipmentId = (id) => {
-        this.setState({ equipmentId: id });
-    }
 
-    updateCustomerId = (id) => {
+
+    onEquipmentIdChange = (id) => { this.setState({ equipmentId: id }); }
+
+    handleCustomerIdChange(id) {
         this.setState({ customerId: id });
     }
 
-    updateStaffId = (id) => {
+    handleStaffIdChange(id) {
         this.setState({ staffId: id });
     }
 
     // methods to update cost, hourly and daily price
     // passed from respective Table components 
-    updateCost = (durationDays, durationHours) => {
+
+    handleCostChange = (durationDays, durationHours) => {
         // calculate the total cost based on the price per day and price per hour
         this.setState({ cost: durationDays * this.state.pricePerDay + durationHours * this.state.pricePerHour });
     }
 
-    updatePrices = (pricePerHour, pricePerDay) => {
+    handlePriceChange = (pricePerHour, pricePerDay) => {
         this.setState({ pricePerHour: pricePerHour });
         this.setState({ pricePerDay: pricePerDay });
     }
 
-    // create rental return datetime from rentalHours and rentalDays 
-    updateReturnDateTime = (rentalHours, rentalDays) => {
+    handleReturnDateTimeChange = (rentalHours, rentalDays) => {
         // create a new date object and add the specified number of hours and days to it
         const futureDate = new Date();
         futureDate.setHours(futureDate.getHours() + rentalHours);
@@ -59,17 +67,26 @@ class OrderSubmission extends Component {
 
         this.setState({ returnDateTIme: `${year}-${month}-${date} ${hours}:${minutes}:${seconds}` });
     }
-    // };
-
-    // updateReturnDatetime = (dateTime) => {
-    //     this.setState({ returnDateTime: dateTime });
-    // }
-
-
 
     render() {
-        return (null);
+        return (
+            <div>
+                <div>
+                    < InventoryTable
+                        onEquipmentIdChange={this.onEquipmentIdChange}
+                        onPriceChange={this.handlePriceChange} />
+                </div>
+                < CustomersTable onCustomerIdChange={this.handleCustomerIdChange} />
+                < StaffTable onStaffIdChange={this.handleStaffIdChange} />
+                < OrderDetails onCostChange={this.handleCostChange} onReturnDateTimeChange={this.handleReturnDateTimeChange} />
+            </div>
+        );
+
     }
 }
 
+
+
 export default OrderSubmission;
+
+

@@ -1,40 +1,29 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import OrderSubmission from './OrderSubmission';
 import "./StaffTable.css";
 
 class StaffTable extends Component {
     constructor(props) {
         super(props);
-        this.state = { staffPieces: [], selectedStaffId: '', selectedFirstName: '', selectedSurname: '' };
+        this.state = {
+            rowClicked: false
+        };
+        this.handleRowClick = this.handleRowClick.bind(this);
     }
 
-    componentDidMount() {
-        axios.get('http://localhost:8080/staff/all')
-            .then(response => {
-                this.setState({ staffPieces: response.data });
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-
-    handleRowClick = (id, firstName, surname) => {
-        // Update the customerId in OrderSubmission component
-        this.orderSubmission.updateStaffId(id);
-        this.setState({ selectedStaffId: id });
-        this.setState({ selectedFirstName: firstName });
-        this.setState({ selectedSurname: surname });
-
-
+    handleRowClick(id, selectedFirstName, selectedSurname) {
+        if (!(this.state.rowClicked))
+        {
+            this.setState({ rowClicked: true });
+        }
+        this.props.handleChange("staffId", id);
+        this.props.handleChange("staffFirstName", selectedFirstName);
+        this.props.handleChange("staffSurname", selectedSurname);
     }
 
     render() {
         return (
             <div>
-                {/* Pass a reference to the OrderSubmission component to this.orderSubmission */}
-                <OrderSubmission ref={(el) => this.orderSubmission = el} />
                 <div>
                     <h2 className='heading'>Staff Members</h2>
                     <table className='inventory-table'>
@@ -54,7 +43,7 @@ class StaffTable extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {this.state.staffPieces.map(staff => (
+                            {this.props.staffInfo.map(staff => (
                                 <tr key={staff.id} onClick={() => this.handleRowClick(staff.id, staff.firstName, staff.surname)}>
                                     <td>{staff.id}</td>
                                     <td>{staff.firstName}</td>
@@ -71,11 +60,11 @@ class StaffTable extends Component {
                             ))}
                         </tbody>
                     </table>
-                    {this.state.selectedStaffId
-                        ? <div className='selected-equipment'>You have selected: First Name: {this.state.selectedFirstName}, Surname: {this.state.selectedSurname} and Staff ID: {this.state.selectedStaffId}</div>
+                    {this.state.rowClicked
+                        ? <div className='selected-equipment'>You have selected: First Name: {this.props.selectedStaffFirstName}, Surname: {this.props.selectedStaffSurname} and Staff ID: {this.props.selectedStaffId}</div>
                         : <div className='instructions'>Please choose a staff member that made the sale by clicking on it</div>
                     }
-                    {this.state.selectedStaffId
+                    {this.state.rowClicked
                         ? <Link to="/details"><button className='continue-button'>Continue</button></Link>
                         : null
                     }
