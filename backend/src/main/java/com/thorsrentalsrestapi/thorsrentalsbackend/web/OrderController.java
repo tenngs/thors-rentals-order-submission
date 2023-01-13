@@ -7,6 +7,7 @@ import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ import com.thorsrentalsrestapi.thorsrentalsbackend.repository.StaffRepository;
 import com.thorsrentalsrestapi.thorsrentalsbackend.service.OrderService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/order")
 public class OrderController {
 
@@ -44,7 +46,7 @@ public class OrderController {
     @Autowired
     InventoryRepository inventoryRepository;
 
-    // get order by ID 
+    // get order by ID
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrder(@PathVariable Long id) {
         Order order = orderService.findOrderById(id);

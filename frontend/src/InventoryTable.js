@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-
-
-
 import "./InventoryTable.css";
 
 class InventoryTable extends Component {
@@ -29,7 +25,7 @@ class InventoryTable extends Component {
         this.props.handleChange("pricePerDay", selectedPricePerDay);
     }
 
-    
+
 
     render() {
         return (

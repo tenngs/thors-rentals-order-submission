@@ -1,15 +1,13 @@
 import axios from 'axios';
+import moment from 'moment';
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import CustomersTable from './CustomersTable';
 import InventoryTable from "./InventoryTable";
 import LandingPage from "./LandingPage";
 import OrderDetails from "./OrderDetails";
 import Review from "./Review";
 import StaffTable from "./StaffTable";
-
-
-
 
 // All props here
 // ---> pass down to other components
@@ -18,32 +16,34 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inventoryPieces: [], // DONE!
-      customerPieces: [], // DONE!
-      staffPieces: [], // DONE!
-      equipmentId: '', // DONE!
-      make: '', // DONE!
-      model: '', // DONE!
-      pricePerHour: '', // DONE!
-      pricePerDay: '', // DONE!
-      customerId: '', // DONE!
-      customerFirstName: '', // DONE!
-      customerSurname: '', // DONE!
-      customerEmail: '', // DONE!
-      staffId: '', // DONE!
-      staffFirstName: '', // DONE!
-      staffSurname: '', // DONE!
-
-      // parent component does need to have rentalHours
-      // and rentalDays as state
-      rentalHours: '', // DONE! - TEST
-      rentalDays: '', //DONE! - TEST
-      cost: '', //DONE! - TEST
-      returnDateTime: '' //DONE! - TEST
+      inventoryPieces: [],
+      customerPieces: [],
+      staffPieces: [],
+      equipmentId: '',
+      make: '',
+      model: '',
+      pricePerHour: '',
+      pricePerDay: '',
+      customerId: '',
+      customerFirstName: '',
+      customerSurname: '',
+      customerEmail: '',
+      staffId: '',
+      staffFirstName: '',
+      staffSurname: '',
+      rentalHours: '',
+      rentalDays: '',
+      cost: '',
+      returnDateTime: ''
     };
+    // bind functions to this
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDurationInputChange = this.handleDurationInputChange.bind(this);
-
+    this.calculateAndSetCost = this.calculateAndSetCost.bind(this);
+    this.calculateAndSetReturnDateTime = this.calculateAndSetReturnDateTime.bind(this);
+    this.submitOrder = this.submitOrder.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   // universal "change state function"
@@ -70,8 +70,27 @@ class App extends Component {
     this.setState({ [name]: value });
   }
 
+  handleSubmit() {
+    this.calculateAndSetCost();
+    this.calculateAndSetReturnDateTime();
+  }
+
+  calculateAndSetCost() {
+    console.log("calculateAndSetCost CALLED")
+    let totalCost = this.state.rentalDays * this.state.pricePerDay + this.state.rentalHours * this.state.pricePerHour
+    console.log("I am totalcost ", totalCost);
+    this.handleChange("cost", totalCost);
+  }
+
+  calculateAndSetReturnDateTime() {
+    // use moment.js library to calculate 
+    // and set return date and time
+    var now = moment();
+    this.handleChange("returnDateTime", moment(now).add(this.state.rentalDays, 'days').add(this.state.rentalHours, 'hours').format('YYYY-MM-DD HH:mm:ss'));
+  }
+
   // get all inventory items, staff and customers and
-  // initialise them by changing state
+  // initialise them by setting state on componentDidMount()
   componentDidMount() {
     axios.get('http://localhost:8080/inventory/all')
       .then(response => {
@@ -98,6 +117,56 @@ class App extends Component {
       });
   }
 
+  submitOrder() {
+    axios.post('http://localhost:8080/order', {
+      rentalHours: this.state.rentalHours,
+      rentalDays: this.state.rentalDays,
+      cost: this.state.cost,
+      returnDateTime: this.state.returnDateTime,
+      status: this.state.status,
+      inventory: {
+        id: this.state.equipmentId
+      },
+      staff: {
+        id: this.state.staffId
+      },
+      customer: {
+        id: this.state.customerId
+      }
+    }).then(response => {
+      console.log(response.data);
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+
+  handleCancel() {
+    this.setState({
+      inventoryPieces: '',
+      customerPieces: '',
+      staffPieces: '',
+      equipmentId: '',
+      make: '',
+      model: '',
+      pricePerHour: '',
+      pricePerDay: '',
+      customerId: '',
+      customerFirstName: '',
+      customerSurname: '',
+      customerEmail: '',
+      staffId: '',
+      staffFirstName: '',
+      staffSurname: '',
+      rentalHours: '',
+      rentalDays: '',
+      cost: '',
+      returnDateTime: ''
+    });
+    this.props.history.push('/');
+  }
+
+  // define routes and props that are passed
+  // to child components
   render() {
     return (
       <div className='App'>
@@ -132,12 +201,8 @@ class App extends Component {
           </Route>
           <Route path='/details' exact>
             <OrderDetails
-              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
               handleInputChange={this.handleDurationInputChange}
-              rentalHours={this.rentalHours}
-              rentaldays={this.rentalDays}
-              hourlyPrice={this.pricePerHour}
-              dailyPrice={this.pricePerDay}
             />
           </Route>
           <Route path='/review' exact>
@@ -158,6 +223,8 @@ class App extends Component {
               rentalDays={this.state.rentalDays}
               cost={this.state.cost}
               returnDateTime={this.state.returnDateTime}
+              submit={this.submitOrder}
+              cancel={this.handleCancel}
             />
           </Route>
         </Switch>
@@ -166,7 +233,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
 
 
 

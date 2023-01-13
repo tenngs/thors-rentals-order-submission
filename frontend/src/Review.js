@@ -1,10 +1,13 @@
 import { Component } from "react";
+import "./Review.css";
+
+
 
 class Review extends Component {
     render() {
         return (
             <div>
-                <h1>Rental Review</h1>
+                <h1 className="heading">Rental Review</h1>
                 <table>
                     <tbody>
                         <tr>
@@ -21,11 +24,11 @@ class Review extends Component {
                         </tr>
                         <tr>
                             <td>Price per Hour:</td>
-                            <td>{this.props.pricePerHour}</td>
+                            <td>£{this.props.pricePerHour}</td>
                         </tr>
                         <tr>
                             <td>Price per Day:</td>
-                            <td>{this.props.pricePerDay}</td>
+                            <td>£{this.props.pricePerDay}</td>
                         </tr>
                         <tr>
                             <td>Customer ID:</td>
@@ -64,8 +67,8 @@ class Review extends Component {
                             <td>{this.props.rentalDays}</td>
                         </tr>
                         <tr>
-                            <td>Cost:</td>
-                            <td>{this.props.cost}</td>
+                            <td>Total Cost:</td>
+                            <td>£{this.props.cost}</td>
                         </tr>
                         <tr>
                             <td>Return Date & Time:</td>
@@ -73,6 +76,10 @@ class Review extends Component {
                         </tr>
                     </tbody>
                 </table>
+                <div className='button-container'>
+                    <button onClick={this.props.submit} className='submit-button'>Submit</button>
+                    <button onClick={this.props.cancel} className='cancel-button'>Cancel</button>
+                </div>
             </div>
         );
     }
