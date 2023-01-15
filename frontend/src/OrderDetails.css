@@ -4,10 +4,15 @@ form {
     align-items: center;
 }
 
+
 h2 {
     font-size: 2em;
     color: #00b8d4;
     margin-bottom: 10px;
+}
+
+.heading {
+    animation: slideDown 1s;
 }
 
 label {
@@ -31,7 +36,6 @@ input {
     color: #bdbdbd;
     text-align: center;
     padding: 20px;
-    /* animation: slideUp 1s ease-out 1s, fadeIn 2s ease-in-out; */
     animation: slideUp 1s;
 }
 
@@ -45,6 +49,27 @@ button {
     cursor: pointer;
     margin-bottom: 10px;
     text-decoration: none;
+    animation: slideUp 1s;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
 
 button:hover {

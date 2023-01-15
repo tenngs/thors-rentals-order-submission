@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./CustomersTable.css";
+import TopBar from './TopBar';
 
 class CustomersTable extends Component {
     constructor(props) {
@@ -28,6 +29,7 @@ class CustomersTable extends Component {
     render() {
         return (
             <div>
+                <TopBar></TopBar>
                 <div>
                     <h2 className='heading'>Customers </h2>
                     <table className='inventory-table'>
@@ -58,7 +60,7 @@ class CustomersTable extends Component {
                     </table>
                     {this.state.rowClicked
                         ? <div className='selected-equipment'>You have selected: First Name: {this.props.selectedFirstName}, Surname: {this.props.selectedSurname} and Customer ID: {this.props.selectedCustomerId}</div>
-                        : <div className='instructions'>Please choose a customer by clicking on it</div>
+                        : <div className='instructions'>Please choose a customer by clicking on a row</div>
 
                     }
                     {this.state.rowClicked

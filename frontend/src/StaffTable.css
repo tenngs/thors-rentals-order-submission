@@ -49,7 +49,6 @@ table tbody tr:hover {
     color: #bdbdbd;
     text-align: center;
     padding: 20px;
-    /* animation: slideUp 1s ease-out 1s, fadeIn 2s ease-in-out; */
     animation: slideUp 1s;
 }
 
@@ -81,15 +80,7 @@ table tbody tr:hover {
     text-decoration: none;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
 
-    to {
-        opacity: 1;
-    }
-}
 
 @keyframes slideUp {
     from {

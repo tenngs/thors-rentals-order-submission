@@ -44,6 +44,9 @@ class App extends Component {
     this.calculateAndSetReturnDateTime = this.calculateAndSetReturnDateTime.bind(this);
     this.submitOrder = this.submitOrder.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.getAvailableInventory = this.getAvailableInventory.bind(this);
+    this.getCustomers = this.getCustomers.bind(this);
+    this.getStaff = this.getStaff.bind(this);
   }
 
   // universal "change state function"
@@ -92,6 +95,12 @@ class App extends Component {
   // get all inventory items, staff and customers and
   // initialise them by setting state on componentDidMount()
   componentDidMount() {
+    this.getAvailableInventory();
+    this.getCustomers();
+    this.getStaff();
+  }
+
+  getAvailableInventory() {
     axios.get('http://localhost:8080/inventory/all')
       .then(response => {
         this.setState({ inventoryPieces: response.data });
@@ -99,7 +108,9 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       });
+  }
 
+  getCustomers() {
     axios.get('http://localhost:8080/customer/all')
       .then(response => {
         this.setState({ customerPieces: response.data });
@@ -107,7 +118,9 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       });
+  }
 
+  getStaff() {
     axios.get('http://localhost:8080/staff/all')
       .then(response => {
         this.setState({ staffPieces: response.data });
@@ -142,9 +155,9 @@ class App extends Component {
 
   handleCancel() {
     this.setState({
-      inventoryPieces: '',
-      customerPieces: '',
-      staffPieces: '',
+      inventoryPieces: [],
+      customerPieces: [],
+      staffPieces: [],
       equipmentId: '',
       make: '',
       model: '',
@@ -162,6 +175,10 @@ class App extends Component {
       cost: '',
       returnDateTime: ''
     });
+
+    this.getAvailableInventory();
+    this.getCustomers();
+    this.getStaff();
     this.props.history.push('/');
   }
 

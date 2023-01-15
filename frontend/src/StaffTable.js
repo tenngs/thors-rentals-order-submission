@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./StaffTable.css";
+import TopBar from './TopBar';
 
 class StaffTable extends Component {
     constructor(props) {
@@ -24,6 +25,7 @@ class StaffTable extends Component {
     render() {
         return (
             <div>
+                <TopBar></TopBar>
                 <div>
                     <h2 className='heading'>Staff Members</h2>
                     <table className='inventory-table'>
@@ -62,7 +64,7 @@ class StaffTable extends Component {
                     </table>
                     {this.state.rowClicked
                         ? <div className='selected-equipment'>You have selected: First Name: {this.props.selectedStaffFirstName}, Surname: {this.props.selectedStaffSurname} and Staff ID: {this.props.selectedStaffId}</div>
-                        : <div className='instructions'>Please choose a staff member that made the sale by clicking on it</div>
+                        : <div className='instructions'>Please choose a staff member submitting the order by clicking on a row</div>
                     }
                     {this.state.rowClicked
                         ? <Link to="/details"><button className='continue-button'>Continue</button></Link>

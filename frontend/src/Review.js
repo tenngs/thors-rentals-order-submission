@@ -1,5 +1,6 @@
 import { Component } from "react";
 import "./Review.css";
+import TopBar from './TopBar';
 
 
 
@@ -7,6 +8,7 @@ class Review extends Component {
     render() {
         return (
             <div>
+                <TopBar></TopBar>
                 <h1 className="heading">Rental Review</h1>
                 <table>
                     <tbody>

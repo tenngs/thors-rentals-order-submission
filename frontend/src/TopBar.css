@@ -1,0 +1,46 @@
+.top-bar {
+    background-color: #333;
+    /* slightly lighter shade of grey */
+    height: 50px;
+    /* adjust to desired height */
+    display: flex;
+    /* allows for horizontal alignment of elements */
+    align-items: center;
+    /* centers elements vertically */
+    padding: 0 20px;
+    /* adds some padding on the left and right */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* adds a subtle shadow to the bar */
+    background: linear-gradient(to right, rgb(133, 133, 133), rgb(233, 232, 232));
+    box-shadow: 0px 5px 10px #ccc;
+    transform: skew(-10deg);
+    transition: all 0.3s ease-in-out;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.top-bar:hover {
+    transform: skew(0deg);
+    background: linear-gradient(to right, #ccc, #eee);
+    box-shadow: 0px 10px 20px #ccc;
+}
+
+.top-bar h1 {
+    color: white;
+    /* makes text white */
+    font-size: 1.5rem;
+    /* increases font size */
+    margin-right: auto;
+    /* pushes text to the left */
+}
+
+.top-bar h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: auto;
+    /* pushes text to the right */
+}

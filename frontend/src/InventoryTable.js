@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./InventoryTable.css";
+import TopBar from './TopBar';
 
 class InventoryTable extends Component {
     constructor(props) {
@@ -30,6 +31,7 @@ class InventoryTable extends Component {
     render() {
         return (
             <div>
+                <TopBar></TopBar>
                 <div>
                     <h2 className='heading'>Available Inventory</h2>
                 </div>
@@ -61,16 +63,18 @@ class InventoryTable extends Component {
                         ))}
                     </tbody>
                 </table>
-                {this.state.rowClicked                                              // get this value from App.js      get this value from App.js
-                    ? <div className='selected-equipment'>You have selected: Make: {this.props.selectedMake}, Model: {this.props.selectedModel} and Equipment ID: {this.props.selectedEquipmentId}</div>
-                    : <div className='instructions'>Please choose an order item by clicking on it</div>
+                {
+                    this.state.rowClicked                                              // get this value from App.js      get this value from App.js
+                        ? <div className='selected-equipment'>You have selected: Make: {this.props.selectedMake}, Model: {this.props.selectedModel} and Equipment ID: {this.props.selectedEquipmentId}</div>
+                        : <div className='instructions'>Please choose an order item by clicking on a row</div>
 
                 }
-                {this.state.rowClicked
-                    ? <Link to="/customers"><button className='continue-button'>Continue</button></Link>
-                    : null
+                {
+                    this.state.rowClicked
+                        ? <Link to="/customers"><button className='continue-button'>Continue</button></Link>
+                        : null
                 }
-            </div>
+            </div >
         );
     }
 }
