@@ -34,7 +34,9 @@ class App extends Component {
       rentalHours: '',
       rentalDays: '',
       cost: '',
-      returnDateTime: ''
+      returnDateTime: '',
+      showOrderSubmitSuccessModal: false,
+      showOrderSubmitFailModal: false
     };
     // bind functions to this
     this.handleChange = this.handleChange.bind(this);
@@ -47,6 +49,9 @@ class App extends Component {
     this.getAvailableInventory = this.getAvailableInventory.bind(this);
     this.getCustomers = this.getCustomers.bind(this);
     this.getStaff = this.getStaff.bind(this);
+    this.clearStateValues = this.clearStateValues.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
+    // this.handleFailureModalClose = this.handleFailureModalClose.bind(this);
   }
 
   // universal "change state function"
@@ -147,13 +152,15 @@ class App extends Component {
         id: this.state.customerId
       }
     }).then(response => {
+      this.setState({ showModal: true });
       console.log(response.data);
+
     }).catch(error => {
       console.log(error);
     });
   }
 
-  handleCancel() {
+  clearStateValues() {
     this.setState({
       inventoryPieces: [],
       customerPieces: [],
@@ -175,12 +182,21 @@ class App extends Component {
       cost: '',
       returnDateTime: ''
     });
-
+  }
+  handleCancel() {
+    this.clearStateValues();
     this.getAvailableInventory();
     this.getCustomers();
     this.getStaff();
     this.props.history.push('/');
   }
+
+  handleModalClose() {
+    this.setState({ showModal: false });
+    this.props.history.push('/');
+  }
+
+
 
   // define routes and props that are passed
   // to child components
@@ -242,6 +258,8 @@ class App extends Component {
               returnDateTime={this.state.returnDateTime}
               submit={this.submitOrder}
               cancel={this.handleCancel}
+              showModal={this.state.showModal}
+              handleModalClose={this.handleModalClose}
             />
           </Route>
         </Switch>
@@ -251,6 +269,8 @@ class App extends Component {
 }
 
 export default withRouter(App);
+
+
 
 
 

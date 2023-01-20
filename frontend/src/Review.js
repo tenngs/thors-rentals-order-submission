@@ -5,6 +5,12 @@ import TopBar from './TopBar';
 
 
 class Review extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showModal: false,
+        };
+    }
     render() {
         return (
             <div>
@@ -81,6 +87,17 @@ class Review extends Component {
                 <div className='button-container'>
                     <button onClick={this.props.submit} className='submit-button'>Submit</button>
                     <button onClick={this.props.cancel} className='cancel-button'>Cancel</button>
+                </div>
+                <div>
+                    {this.props.showModal ? (
+                        <div className="modal-overlay">
+                            <div className="modal-content">
+                                <h2 className="modal-heading">Order Submitted!</h2>
+                                <p className="modal-text">Your order has been successfully submitted.</p>
+                                <button className="modal-button" onClick={this.props.handleModalClose}>OK</button>
+                            </div>
+                        </div>
+                    ) : null}
                 </div>
             </div>
         );
