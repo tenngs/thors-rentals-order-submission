@@ -93,11 +93,12 @@ class Review extends Component {
                         <div className="modal-overlay">
                             <div className="modal-content">
                                 <h2 className="modal-heading">Order Submitted!</h2>
-                                <p className="modal-text">Your order has been successfully submitted.</p>
+                                <p className="modal-text">Please press OK to navigate to Landing Page</p>
                                 <button className="modal-button" onClick={this.props.handleModalClose}>OK</button>
                             </div>
                         </div>
                     ) : null}
+                    
                 </div>
             </div>
         );
@@ -106,74 +107,3 @@ class Review extends Component {
 
 export default Review;
 
-
-
-
-// handleSubmit = () => {
-//     axios.post('/order', {
-//         equipmentId: this.state.equipmentId,
-//         customerId: this.state.customerId,
-//         staffId: this.state.staffId,
-//         rentalHours: this.state.rentalHours,
-//         rentalDays: this.state.rentalDays,
-//         pricePerHour: this.state.pricePerHour,
-//         pricePerDay: this.state.pricePerDay,
-//         cost: this.state.cost,
-//         returnDateTime: this.state.returnDateTime
-//     })
-//         .then(() => {
-//             this.setState({ redirect: true });
-
-//         })
-//         .catch((error) => {
-//             console.error(error);
-//         });
-// }
-
-// handleCancel = () => {
-//     // Reset all state in OrderSubmission component
-//     this.setState({
-//         equipmentId: '',
-//         customerId: '',
-//         staffId: '',
-//         rentalHours: '',
-//         rentalDays: '',
-//         pricePerHour: '',
-//         pricePerDay: '',
-//         cost: '',
-//         returnDateTime: '',
-//         reDirect: true
-//     });
-
-//     // if user cancels the order
-//     // ---> navigate to LandingPage component
-//     // this.props.history.push('/');
-// }
-
-
-
-// render() {
-//     if (this.state.reDirect)
-//     {
-//         return <Redirect to="/" />;
-//     }
-//     return this.state.showComponent ?
-//         (
-
-//             <div className='order-summary'>
-//                 <h2>Order Summary</h2>
-//                 <p>Equipment ID: {this.state.equipmentId}</p>
-//                 <p>Customer ID: {this.state.customerId}</p>
-//                 <p>Staff ID: {this.state.staffId}</p>
-//                 <p>Rental Hours: {this.state.rentalHours}</p>
-//                 <p>Rental Days: {this.state.rentalDays}</p>
-//                 <p>Price Per Hour: {this.state.pricePerHour}</p>
-//                 <p>Price Per Day: {this.state.pricePerDay}</p>
-//                 <p>Cost: {this.state.cost}</p>
-//                 <p>Return Date & Time: {this.state.returnDateTime}</p>
-//                 <button onClick={this.handleSubmit}>Submit Order</button>
-//                 <button onClick={this.handleCancel}>Cancel Order</button>
-
-//             </div>) : <h1> {this.state.showComponent}</h1>
-//         ;
-// }

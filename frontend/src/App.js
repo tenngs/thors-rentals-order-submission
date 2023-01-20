@@ -6,8 +6,11 @@ import CustomersTable from './CustomersTable';
 import InventoryTable from "./InventoryTable";
 import LandingPage from "./LandingPage";
 import OrderDetails from "./OrderDetails";
+import OrderTable from "./OrderTable";
 import Review from "./Review";
 import StaffTable from "./StaffTable";
+
+
 
 // All props here
 // ---> pass down to other components
@@ -19,6 +22,7 @@ class App extends Component {
       inventoryPieces: [],
       customerPieces: [],
       staffPieces: [],
+      orderPices: [],
       equipmentId: '',
       make: '',
       model: '',
@@ -36,7 +40,7 @@ class App extends Component {
       cost: '',
       returnDateTime: '',
       showOrderSubmitSuccessModal: false,
-      showOrderSubmitFailModal: false
+      orderAmount: '0'
     };
     // bind functions to this
     this.handleChange = this.handleChange.bind(this);
@@ -51,7 +55,9 @@ class App extends Component {
     this.getStaff = this.getStaff.bind(this);
     this.clearStateValues = this.clearStateValues.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
-    // this.handleFailureModalClose = this.handleFailureModalClose.bind(this);
+    this.getOrders = this.getOrders.bind(this);
+
+
   }
 
   // universal "change state function"
@@ -84,9 +90,7 @@ class App extends Component {
   }
 
   calculateAndSetCost() {
-    console.log("calculateAndSetCost CALLED")
     let totalCost = this.state.rentalDays * this.state.pricePerDay + this.state.rentalHours * this.state.pricePerHour
-    console.log("I am totalcost ", totalCost);
     this.handleChange("cost", totalCost);
   }
 
@@ -103,6 +107,7 @@ class App extends Component {
     this.getAvailableInventory();
     this.getCustomers();
     this.getStaff();
+    this.getOrders();
   }
 
   getAvailableInventory() {
@@ -135,6 +140,16 @@ class App extends Component {
       });
   }
 
+  getOrders() {
+    axios.get('http://localhost:8080/order/all')
+      .then(response => {
+        this.setState({ orderPices: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
   submitOrder() {
     axios.post('http://localhost:8080/order', {
       rentalHours: this.state.rentalHours,
@@ -153,6 +168,7 @@ class App extends Component {
       }
     }).then(response => {
       this.setState({ showModal: true });
+      this.setState({ orderAmount: this.state.orderAmount + 1 });
       console.log(response.data);
 
     }).catch(error => {
@@ -204,7 +220,11 @@ class App extends Component {
     return (
       <div className='App'>
         <Switch>
-          <Route exact path='/' component={LandingPage} />
+          <Route path='/' exact>
+            <LandingPage
+              orderAmount={this.state.orderAmount}
+            />
+          </Route>
           <Route path='/inventory' exact>
             <InventoryTable
               handleChange={this.handleChange}
@@ -260,6 +280,11 @@ class App extends Component {
               cancel={this.handleCancel}
               showModal={this.state.showModal}
               handleModalClose={this.handleModalClose}
+            />
+          </Route>
+          <Route path='/orders' exact>
+            <OrderTable
+              orders={this.state.orderPices}
             />
           </Route>
         </Switch>

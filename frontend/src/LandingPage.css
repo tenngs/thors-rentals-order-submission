@@ -33,6 +33,15 @@
     background-color: #0091c2;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container button {
+    margin: 0 10px;
+}
+
 @keyframes welcome-animation {
     from {
         transform: translateY(-30px);

@@ -24,5 +24,4 @@ public class StaffController {
     public List<Staff> getAllStaff() {
         return staffService.findAllStaff();
     }
-
 }

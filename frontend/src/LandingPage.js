@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import "./LandingPage.css";
 
@@ -21,12 +20,17 @@ class LandingPage extends Component {
                 <p>
                     Please start the Order Submission Process by clicking the button to view available inventory
                 </p>
-                <Link to="/inventory">
-                    <button className="btn btn-primary">Start Order Submission</button>
-                </Link>
+                <div className="button-container">
+                    <Link to="/inventory">
+                        <button className="btn btn-primary">Start Order Submission</button>
+                    </Link>
+                    {this.props.orderAmount > 0 ?
+                        <button className="btn btn-secondary" onClick={() => this.props.history.push('/orders')}>View All Orders</button>
+                        : null}
+                </div>
             </div>
         );
     }
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);
