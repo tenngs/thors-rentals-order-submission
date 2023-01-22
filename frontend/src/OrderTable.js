@@ -24,8 +24,9 @@ class OrderTable extends Component {
                 <table>
                     <thead>
                         <tr>
+                            <th>Order Number</th>
                             <th>Equipment ID</th>
-                            <th>Customer ID</th>
+                            <th>Customer Name</th>
                             <th>Staff ID</th>
                             <th>Rental Hours</th>
                             <th>Rental Days</th>
@@ -36,8 +37,10 @@ class OrderTable extends Component {
                     <tbody>
                         {this.props.orders.map(order => (
                             <tr key={order.id}>
+                                <td>{order.id}</td>
                                 <td>{order.inventory.id}</td>
-                                <td>{order.customer.id}</td>
+                                <td>{order.customer.firstName} {order.customer.surname}</td>
+
                                 <td>{order.staff.id}</td>
                                 <td>{order.rentalHours}</td>
                                 <td>{order.rentalDays}</td>
