@@ -22,7 +22,7 @@ class App extends Component {
       inventoryPieces: [],
       customerPieces: [],
       staffPieces: [],
-      orderPices: [],
+      orderPieces: [],
       equipmentId: '',
       make: '',
       model: '',
@@ -143,7 +143,7 @@ class App extends Component {
   getOrders() {
     axios.get('http://localhost:8080/order/all')
       .then(response => {
-        this.setState({ orderPices: response.data });
+        this.setState({ orderPieces: response.data });
       })
       .catch(error => {
         console.log(error);
@@ -169,6 +169,8 @@ class App extends Component {
     }).then(response => {
       this.setState({ showModal: true });
       this.setState({ orderAmount: this.state.orderAmount + 1 });
+      this.setState({ rentalHours: '' });
+      this.setState({ rentalDays: '' });
       console.log(response.data);
 
     }).catch(error => {
@@ -283,9 +285,10 @@ class App extends Component {
             />
           </Route>
           <Route path='/orders' exact>
-            <OrderTable
-              orders={this.state.orderPices}
-            />
+            {/* <OrderTable
+              orders={this.state.orderPieces}
+            /> */}
+            <OrderTable />
           </Route>
         </Switch>
       </div>

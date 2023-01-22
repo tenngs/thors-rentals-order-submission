@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import "./CustomersTable.css";
 import TopBar from './TopBar';
 
@@ -63,9 +63,10 @@ class CustomersTable extends Component {
                         : <div className='instructions'>Please choose a customer by clicking on a row</div>
 
                     }
-                    {this.state.rowClicked
-                        ? <Link to="/staff"><button className='continue-button'>Continue</button></Link>
-                        : null
+                    {
+                        this.state.rowClicked
+                            ? <button className='continue-button' onClick={() => this.props.history.push('/staff')}>Continue</button>
+                            : null
                     }
                 </div>
             </div>
@@ -73,4 +74,4 @@ class CustomersTable extends Component {
     }
 }
 
-export default CustomersTable;
+export default withRouter(CustomersTable);

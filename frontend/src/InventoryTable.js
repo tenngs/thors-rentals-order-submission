@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+
 import "./InventoryTable.css";
 import TopBar from './TopBar';
 
@@ -67,11 +68,10 @@ class InventoryTable extends Component {
                     this.state.rowClicked                                              // get this value from App.js      get this value from App.js
                         ? <div className='selected-equipment'>You have selected: Make: {this.props.selectedMake}, Model: {this.props.selectedModel} and Equipment ID: {this.props.selectedEquipmentId}</div>
                         : <div className='instructions'>Please choose an order item by clicking on a row</div>
-
                 }
                 {
                     this.state.rowClicked
-                        ? <Link to="/customers"><button className='continue-button'>Continue</button></Link>
+                        ? <button className='continue-button' onClick={() => this.props.history.push('/customers')}>Continue</button>
                         : null
                 }
             </div >
@@ -79,4 +79,8 @@ class InventoryTable extends Component {
     }
 }
 
-export default InventoryTable;
+
+export default withRouter(InventoryTable);
+
+{/* <button className='continue-button'>Continue</button>
+onClick={() => this.props.history.push('/orders')} */}

@@ -1,20 +1,26 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+
 import TopBar from './TopBar';
 
 
 class OrderTable extends Component {
-
-
-    // componentDidMount() {
-    //     axios.get('http://localhost:8080/order')
-    //         .then(res => {
-    //             this.setState({ orders: res.data });
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         });
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            orders: []
+        }
+    }
+    componentDidMount() {
+        axios.get('http://localhost:8080/order/all')
+            .then(res => {
+                this.setState({ orders: res.data });
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
 
     render() {
         return (
@@ -35,12 +41,11 @@ class OrderTable extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.orders.map(order => (
+                        {this.state.orders.map(order => (
                             <tr key={order.id}>
                                 <td>{order.id}</td>
                                 <td>{order.inventory.id}</td>
                                 <td>{order.customer.firstName} {order.customer.surname}</td>
-
                                 <td>{order.staff.id}</td>
                                 <td>{order.rentalHours}</td>
                                 <td>{order.rentalDays}</td>

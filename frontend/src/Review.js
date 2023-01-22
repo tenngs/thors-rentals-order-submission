@@ -98,7 +98,7 @@ class Review extends Component {
                             </div>
                         </div>
                     ) : null}
-                    
+
                 </div>
             </div>
         );

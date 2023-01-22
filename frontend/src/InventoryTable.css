@@ -49,7 +49,6 @@ table tbody tr:hover {
   color: #bdbdbd;
   text-align: center;
   padding: 20px;
-  /* animation: slideUp 1s ease-out 1s, fadeIn 2s ease-in-out; */
   animation: slideUp 1s;
 }
 
@@ -58,6 +57,10 @@ table tbody tr:hover {
   color: #00b8d4;
   text-align: center;
   padding: 10px;
+}
+
+button.continue-button {
+  text-decoration: none;
 }
 
 .continue-button {
@@ -71,14 +74,12 @@ table tbody tr:hover {
   animation: slideUp 1s;
   display: block;
   margin: 0 auto;
-  /* text-decoration: none; */
   border-bottom: 0;
   outline: 0;
 }
 
 .continue-button:hover {
   background-color: #0091c2;
-  text-decoration: none;
 }
 
 .top-bar {

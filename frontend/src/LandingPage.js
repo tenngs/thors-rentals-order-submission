@@ -18,15 +18,16 @@ class LandingPage extends Component {
                 </p>
 
                 <p>
-                    Please start the Order Submission Process by clicking the button to view available inventory
+                    Please submit a new order
                 </p>
+                <p>Alternatively, please view all submitted orders</p>
                 <div className="button-container">
                     <Link to="/inventory">
-                        <button className="btn btn-primary">Start Order Submission</button>
+                        <button className="btn btn-primary">Submit New Order</button>
                     </Link>
-                    {this.props.orderAmount > 0 ?
-                        <button className="btn btn-secondary" onClick={() => this.props.history.push('/orders')}>View All Orders</button>
-                        : null}
+
+                    <button className="btn btn-secondary" onClick={() => this.props.history.push('/orders')}>View All Orders</button>
+
                 </div>
             </div>
         );
