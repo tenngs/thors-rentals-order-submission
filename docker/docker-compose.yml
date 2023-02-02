@@ -1,0 +1,64 @@
+# ---------------TUTORIAL VERSION START --------------------
+
+# version: '3.3'
+# services:
+#   db:
+#     image: mysql/mysql-server:8.0
+#     restart: always
+#     environment:
+#       MYSQL_DATABASE: 'db'
+#       MYSQL_USER: 'user'
+#       MYSQL_PASSWORD: 'password'
+#       MYSQL_ROOT_PASSWORD: 'password'
+#     ports:
+#       - '3306:3306'
+#       # - '9999:9999'
+#     expose:
+#       - '3306'
+#     volumes:
+#       - my-db:/var/lib/mysql
+# volumes:
+#   my-db:
+
+# ---------------TUTORIAL VERSION FINISH --------------------
+
+services:
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8888:8080
+  db:
+    image: mysql/mysql-server:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+      # - '9999:9999'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+
+  backend:
+    image: backend:latest
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/db
+      - SPRING.DATASOURCE_USERNAME=user
+      - SPRING.DATASOURCE_PASSWORD=password
+
+  frontend:
+    image: frontend:latest
+    restart: always
+    ports:
+      - 3000:3000
+
+volumes:
+  my-db:

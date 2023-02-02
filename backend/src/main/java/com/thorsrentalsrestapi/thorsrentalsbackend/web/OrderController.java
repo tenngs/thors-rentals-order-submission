@@ -46,7 +46,6 @@ public class OrderController {
     @Autowired
     InventoryRepository inventoryRepository;
 
-    // get order by ID
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrder(@PathVariable Long id) {
         Order order = orderService.findOrderById(id);

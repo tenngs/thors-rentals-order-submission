@@ -27,8 +27,6 @@ class InventoryTable extends Component {
         this.props.handleChange("pricePerDay", selectedPricePerDay);
     }
 
-
-
     render() {
         return (
             <div>
@@ -65,7 +63,7 @@ class InventoryTable extends Component {
                     </tbody>
                 </table>
                 {
-                    this.state.rowClicked                                              // get this value from App.js      get this value from App.js
+                    this.state.rowClicked
                         ? <div className='selected-equipment'>You have selected: Make: {this.props.selectedMake}, Model: {this.props.selectedModel} and Equipment ID: {this.props.selectedEquipmentId}</div>
                         : <div className='instructions'>Please choose an order item by clicking on a row</div>
                 }
@@ -81,6 +79,3 @@ class InventoryTable extends Component {
 
 
 export default withRouter(InventoryTable);
-
-{/* <button className='continue-button'>Continue</button>
-onClick={() => this.props.history.push('/orders')} */}

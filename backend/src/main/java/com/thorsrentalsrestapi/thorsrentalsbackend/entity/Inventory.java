@@ -61,7 +61,6 @@ public class Inventory {
     // 1) One-to-Many with Ski
     // 2) One-to-Many with SnowBoards
     // 3) One-to-Many with Atv
-
     @JsonIgnore
     @OneToMany(mappedBy = "inventory")
     private Set<Order> orders;

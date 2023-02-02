@@ -5,8 +5,6 @@ import OrderDetails from './OrderDetails';
 import "./OrderSubmission.css";
 import StaffTable from './StaffTable';
 
-
-
 class OrderSubmission extends Component {
     constructor(props) {
         super(props);
@@ -22,11 +20,7 @@ class OrderSubmission extends Component {
             returnDateTime: ''
 
         };
-        // this.onEquipmentIdChange = this.onEquipmentIdChange.bind(this);
-
     }
-
-
 
     onEquipmentIdChange = (id) => { this.setState({ equipmentId: id }); }
 
@@ -37,9 +31,6 @@ class OrderSubmission extends Component {
     handleStaffIdChange(id) {
         this.setState({ staffId: id });
     }
-
-    // methods to update cost, hourly and daily price
-    // passed from respective Table components 
 
     handleCostChange = (durationDays, durationHours) => {
         // calculate the total cost based on the price per day and price per hour
@@ -84,8 +75,6 @@ class OrderSubmission extends Component {
 
     }
 }
-
-
 
 export default OrderSubmission;
 

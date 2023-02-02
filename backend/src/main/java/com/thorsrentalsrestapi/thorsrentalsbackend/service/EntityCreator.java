@@ -50,7 +50,6 @@ public class EntityCreator {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     @Transactional
@@ -124,5 +123,4 @@ public class EntityCreator {
         createCustomerTestEntities();
         createInventoryTestEntities();
     }
-
 }

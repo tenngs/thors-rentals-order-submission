@@ -24,7 +24,6 @@ public class Snowboard extends Inventory {
     @Column(name = "id")
     private Long id;
 
-    // equipment type is 2 for snowboadrs
     @Column(name = "equipment_type", nullable = false)
     private int equipmentType;
 }

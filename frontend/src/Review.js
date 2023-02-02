@@ -2,8 +2,6 @@ import { Component } from "react";
 import "./Review.css";
 import TopBar from './TopBar';
 
-
-
 class Review extends Component {
     constructor(props) {
         super(props);
@@ -11,6 +9,7 @@ class Review extends Component {
             showModal: false,
         };
     }
+
     render() {
         return (
             <div>

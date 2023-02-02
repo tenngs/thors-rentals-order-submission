@@ -7,4 +7,3 @@ import com.thorsrentalsrestapi.thorsrentalsbackend.entity.Inventory;
 public interface InventoryRepository extends CrudRepository<Inventory, Long> {
 
 }
-

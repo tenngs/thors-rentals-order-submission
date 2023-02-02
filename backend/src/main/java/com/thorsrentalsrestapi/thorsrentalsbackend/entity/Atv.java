@@ -23,7 +23,6 @@ public class Atv extends Inventory {
     @Column(name = "id")
     private Long id;
 
-    // equipment type is 3 for ATVs
     @Column(name = "equipment_type", nullable = false)
     private int equipmentType;
 

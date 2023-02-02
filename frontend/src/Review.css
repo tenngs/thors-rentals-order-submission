@@ -73,8 +73,6 @@ th {
     margin-top: 15px;
 }
 
-
-
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -82,27 +80,18 @@ th {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    /* overlay layer background color */
     z-index: 10;
-    /* make sure it's on top of other elements */
     display: flex;
-    /* center the modal horizontally and vertically */
     align-items: center;
     justify-content: center;
 }
 
 .modal-content {
     background-color: white;
-    /* modal background color */
     padding: 2rem;
     border-radius: 0.5rem;
-    /* give the modal some rounded corners */
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-    /* add some shadow to the modal */
     width: 40%;
-    /* set the width of the modal */
     max-width: 40rem;
-    /* set a max width */
     text-align: center;
-    /* center the text inside the modal */
 }

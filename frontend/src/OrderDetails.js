@@ -35,4 +35,5 @@ class OrderDetails extends Component {
         );
     }
 }
+
 export default withRouter(OrderDetails);

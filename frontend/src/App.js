@@ -10,8 +10,6 @@ import OrderTable from "./OrderTable";
 import Review from "./Review";
 import StaffTable from "./StaffTable";
 
-
-
 // All props here
 // ---> pass down to other components
 
@@ -64,20 +62,6 @@ class App extends Component {
   handleChange(stateKey, value) {
     this.setState({ [stateKey]: value });
   }
-
-  // more compact "change state function" using
-  // two arrays
-  // handleChange(stateName, stateValue) {
-  //   stateName.forEach((name, index) => {
-  //     let state = {}
-  //     state[name] = stateValue[index]
-  //     this.setState(state)
-  //   })
-  // }
-
-  // usage!
-  // this.props.handleChange(["staffId", "staffFirstName", "staffSurname"], [id, selectedFirstName, selectedSurname]);
-
 
   handleDurationInputChange = (evt) => {
     const { name, value } = evt.target;
@@ -201,6 +185,7 @@ class App extends Component {
       returnDateTime: ''
     });
   }
+
   handleCancel() {
     this.clearStateValues();
     this.getAvailableInventory();
@@ -213,8 +198,6 @@ class App extends Component {
     this.setState({ showModal: false });
     this.props.history.push('/');
   }
-
-
 
   // define routes and props that are passed
   // to child components
@@ -285,9 +268,6 @@ class App extends Component {
             />
           </Route>
           <Route path='/orders' exact>
-            {/* <OrderTable
-              orders={this.state.orderPieces}
-            /> */}
             <OrderTable />
           </Route>
         </Switch>

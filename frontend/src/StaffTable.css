@@ -70,7 +70,6 @@ table tbody tr:hover {
     animation: slideUp 1s;
     display: block;
     margin: 0 auto;
-    /* text-decoration: none; */
     border-bottom: 0;
     outline: 0;
 }
@@ -79,8 +78,6 @@ table tbody tr:hover {
     background-color: #0091c2;
     text-decoration: none;
 }
-
-
 
 @keyframes slideUp {
     from {

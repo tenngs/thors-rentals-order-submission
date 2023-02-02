@@ -49,5 +49,4 @@ public class Staff extends Person {
     @JsonIgnore
     @OneToMany(mappedBy = "staff")
     private Set<Order> orders;
-
 }
