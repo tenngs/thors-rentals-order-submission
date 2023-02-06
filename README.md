@@ -78,16 +78,11 @@ TL;DR Full-stack apps are popular and I wanted show people that I can develop th
 ![image](https://user-images.githubusercontent.com/85033252/217074569-593cdf19-914c-4fc4-b2aa-0c2ae5efc685.png)
 
 
-### Initiating ATV rental<br>
+### Inventory Page with a Piece of Inventory Selected
+![image](https://user-images.githubusercontent.com/85033252/217075453-413a9e7c-0caf-4cde-8c8d-0f9d63281a75.png)
 
-
-
-![](Images/thors-init-rental.gif)
-
-
-
-### Inventory Page with A Piece of Inventory Selected
-![image](https://user-images.githubusercontent.com/85033252/217075287-34ea67ee-318f-46b9-be02-f44338745672.png)
+### Customers Page with a Customer Selected
+![image](https://user-images.githubusercontent.com/85033252/217075581-14faf9ab-f707-4b58-86d2-8fe03dae006e.png)
 
 
 
