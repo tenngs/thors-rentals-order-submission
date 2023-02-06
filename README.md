@@ -2,10 +2,6 @@
 
 ![thors-rentals-order-submission-high-resolution-color-logo](https://user-images.githubusercontent.com/85033252/217022803-fe315caf-b5bf-4d47-b18e-211d285417e6.png)
 
- <h3> Thors Rentals Order Submission<br>
- 
- </div>
- 
  <div align="center">
   
 
