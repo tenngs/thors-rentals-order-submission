@@ -1,7 +1,5 @@
 
 
-![](Images/Thor's_Arctic_Equipment_Rentals.png)
- <div align="center">
 
  <h3> Thors Rentals Order Submission<br>
  
