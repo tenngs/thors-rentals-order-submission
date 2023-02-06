@@ -86,7 +86,9 @@ TL;DR Full-stack apps are popular and I wanted show people that I can develop th
 
 
 
-### Receiving ATV back from loan<br>
+### Inventory Page with A Piece of Inventory Selected
+![image](https://user-images.githubusercontent.com/85033252/217075287-34ea67ee-318f-46b9-be02-f44338745672.png)
+
 
 
 
