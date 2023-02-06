@@ -59,13 +59,13 @@ Thors Rentals Order Submission application provides a rental shop employee a mod
 TL;DR select equipment, customer, employee in charge of the rental and calculate rental cost and return datetime.
 
 ## How does it do it?
-Thor's Rentals' 90s-inspired and ASCII Art-rich user interface interacts with thors_rentals sqlite3 database containing various tables where information can be added to and retrieved from and manipulated. For example, adding a customer involves gathering customer details and saving them into a table in the database and logging in involves querying a database to validate login credentials.<br>
-Furthermore, the system oversees when rental items are due to be returned and the state of current inventory by retrieving information from a database and computing the result when requested.<br><br>
-TL;DR "old-school" UI interacts with sqlite3 database to write, retrieve and compute rental-related stuff.
+The application's Java Spring Boot backend creates inventory items, customers and employees on application's first startup to the MySql database utilised by the application. Once the user navigates to the application's website that is deployed in AWS public cloud utilising Docker, the user is presented an user interface created in React to select whether to view all submitted orders or to submit a new order. If a user chooses to submit a new order, the user is prompted to select the inventory item, customer, employee in charge of the rental and to enter the rental duration. Once these details are entered and a user confirms that the order entered has the correct information in it, the order is saved in a MySql database from which it can be viewed by selecting 'View All Orders' from the landing page.  
+<br><br>
+TL;DR React UI interacts with MySQL database and a Java Spring Boot backend deployed in AWS utilising Docker.
 
 ## OK, but why?
-I have a passion for C++ language. Whilst contemplating a project idea, I came across a myriad of car rental, hospital and student management systems made by others. I also wanted to make a management system of some sort, but simultaneously one that is not so common and fits my preferences.<br><br>
-TL;DR C++ rocks and I wanted use it to make something that I like.
+I wanted to create a three-tier architecture full-stack application to further showcase my skills.<br><br>
+TL;DR Full-stack apps are popular and I wanted show people that I can develop them.
 
 ## Let's have a look-see, shall we?
 
