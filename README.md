@@ -72,9 +72,7 @@ TL;DR Full-stack apps are popular and I wanted show people that I can develop th
 <div align="center">
 
 ### Landing Page
-<br>
 ![image](https://user-images.githubusercontent.com/85033252/217074193-7b312eae-4a17-4a20-86cd-d339434c091a.png)
-<br>
 
 ### View All Orders Page
 <br>
