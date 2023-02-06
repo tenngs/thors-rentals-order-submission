@@ -55,8 +55,8 @@
 
 
 ## What does it do?
-Thor's Rentals provides an arctic rental equipment management system which is aimed to be utilised by a rental shop staff member. Currently, Thor's stocks skis, snowboards and All Terrain Vehicles (ATVs). It allows for adding customers, granting system access for existing staff members, adding rental items, managing outgoing and incoming rental equipment and providing inventory and business-related statistics. The system further provides moderate to high user input validation and a login facility.<br><br>
-TL;DR add customers, system access staff, equipment, provide statistics, calculate when equipment is due back and update inventory.
+Thors Rentals Order Submission application provides a rental shop employee a modern application to submit rental orders by selecting an inventory item to be rented, a customer that is renting the equipment and an employee who is responsible for the rental order. It further allows an employee to specify the rental duration and opportunity to view all submitted rental orders. Additionally, the system automatically calculates the cost of the rental and the date and time when the equipment id due to be returned from loan. <br><br>
+TL;DR select equipment, customer, employee in charge of the rental and calculate rental cost and return datetime.
 
 ## How does it do it?
 Thor's Rentals' 90s-inspired and ASCII Art-rich user interface interacts with thors_rentals sqlite3 database containing various tables where information can be added to and retrieved from and manipulated. For example, adding a customer involves gathering customer details and saving them into a table in the database and logging in involves querying a database to validate login credentials.<br>
