@@ -71,7 +71,6 @@ table tbody tr:hover {
     animation: slideUp 1s;
     display: block;
     margin: 0 auto;
-    /* text-decoration: none; */
     border-bottom: 0;
     outline: 0;
 }

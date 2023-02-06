@@ -13,7 +13,7 @@ class OrderTable extends Component {
         }
     }
     componentDidMount() {
-        axios.get('http://localhost:8080/order/all')
+        axios.get('http://18.116.176.176:8080/order/all')
             .then(res => {
                 this.setState({ orders: res.data });
             })
@@ -21,7 +21,6 @@ class OrderTable extends Component {
                 console.log(err);
             });
     }
-
     render() {
         return (
             <div>

@@ -1,36 +1,8 @@
-# ---------------TUTORIAL VERSION START --------------------
-
-# version: '3.3'
-# services:
-#   db:
-#     image: mysql/mysql-server:8.0
-#     restart: always
-#     environment:
-#       MYSQL_DATABASE: 'db'
-#       MYSQL_USER: 'user'
-#       MYSQL_PASSWORD: 'password'
-#       MYSQL_ROOT_PASSWORD: 'password'
-#     ports:
-#       - '3306:3306'
-#       # - '9999:9999'
-#     expose:
-#       - '3306'
-#     volumes:
-#       - my-db:/var/lib/mysql
-# volumes:
-#   my-db:
-
-# ---------------TUTORIAL VERSION FINISH --------------------
-
 services:
-  # adminer:
-  #   image: adminer
-  #   restart: always
-  #   ports:
-  #     - 8888:8080
   db:
-    image: mysql/mysql-server:8.0
+    image: 490467314700.dkr.ecr.us-east-2.amazonaws.com/mysql/mysql-server:8.0
     restart: always
+    container_name: db
     environment:
       MYSQL_DATABASE: 'db'
       MYSQL_USER: 'user'
@@ -38,15 +10,15 @@ services:
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
       - '3306:3306'
-      # - '9999:9999'
     expose:
       - '3306'
     volumes:
       - my-db:/var/lib/mysql
 
   backend:
-    image: backend:latest
+    image: 490467314700.dkr.ecr.us-east-2.amazonaws.com/backend-service:latest
     restart: always
+    container_name: backend-service
     ports:
       - 8080:8080
     environment:
@@ -55,7 +27,8 @@ services:
       - SPRING.DATASOURCE_PASSWORD=password
 
   frontend:
-    image: frontend:latest
+    image: 490467314700.dkr.ecr.us-east-2.amazonaws.com/frontend-ui:latest
+    container_name: frontend-ui
     restart: always
     ports:
       - 3000:3000

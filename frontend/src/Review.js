@@ -9,7 +9,6 @@ class Review extends Component {
             showModal: false,
         };
     }
-
     render() {
         return (
             <div>

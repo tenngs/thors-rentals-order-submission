@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.thorsrentalsrestapi.thorsrentalsbackend.service.EntityCreator;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://18.116.176.176")
 @SpringBootApplication
 public class ThorsrentalsbackendApplication implements CommandLineRunner {
 
@@ -19,6 +19,7 @@ public class ThorsrentalsbackendApplication implements CommandLineRunner {
 		SpringApplication.run(ThorsrentalsbackendApplication.class, args);
 	}
 
+	// create test entities on startup
 	@Override
 	public void run(String... args) throws Exception {
 		entityCreator.CreateTestEntities();

@@ -27,7 +27,7 @@ import com.thorsrentalsrestapi.thorsrentalsbackend.repository.StaffRepository;
 import com.thorsrentalsrestapi.thorsrentalsbackend.service.OrderService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://18.116.176.176")
 @RequestMapping("/order")
 public class OrderController {
 

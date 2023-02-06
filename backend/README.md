@@ -1,2 +1,1 @@
-# thors-rentals-REST-API
-REST API for Thor's Rentals Arctic Equipment Management System
+# Modern order submission application for Thors Rentals

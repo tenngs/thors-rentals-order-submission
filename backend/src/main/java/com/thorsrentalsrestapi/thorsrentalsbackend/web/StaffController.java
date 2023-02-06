@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thorsrentalsrestapi.thorsrentalsbackend.entity.Staff;
 import com.thorsrentalsrestapi.thorsrentalsbackend.service.StaffService;
 
+// allow frontend to list all staff
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://18.116.176.176")
 @RequestMapping("/staff")
 public class StaffController {
 

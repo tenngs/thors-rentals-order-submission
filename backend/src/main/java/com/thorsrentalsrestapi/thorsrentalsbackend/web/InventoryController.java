@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thorsrentalsrestapi.thorsrentalsbackend.entity.Inventory;
 import com.thorsrentalsrestapi.thorsrentalsbackend.service.InventoryService;
 
+// allow frontend to list all inventory
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://18.116.176.176")
 @RequestMapping("/inventory/all")
 public class InventoryController {
 

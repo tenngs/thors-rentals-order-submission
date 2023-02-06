@@ -12,7 +12,6 @@ import StaffTable from "./StaffTable";
 
 // All props here
 // ---> pass down to other components
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -54,8 +53,6 @@ class App extends Component {
     this.clearStateValues = this.clearStateValues.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
     this.getOrders = this.getOrders.bind(this);
-
-
   }
 
   // universal "change state function"
@@ -63,21 +60,27 @@ class App extends Component {
     this.setState({ [stateKey]: value });
   }
 
+  // handle rental duration input change
   handleDurationInputChange = (evt) => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
   }
 
+  // runner function to:
+  // handle form submit and calculate and set rental cost
+  // and rental item return datetime
   handleSubmit() {
     this.calculateAndSetCost();
     this.calculateAndSetReturnDateTime();
   }
 
+  // calculate and set rental cost
   calculateAndSetCost() {
     let totalCost = this.state.rentalDays * this.state.pricePerDay + this.state.rentalHours * this.state.pricePerHour
     this.handleChange("cost", totalCost);
   }
 
+  // calculate and set rental item return datetime
   calculateAndSetReturnDateTime() {
     // use moment.js library to calculate 
     // and set return date and time
@@ -85,6 +88,7 @@ class App extends Component {
     this.handleChange("returnDateTime", moment(now).add(this.state.rentalDays, 'days').add(this.state.rentalHours, 'hours').format('YYYY-MM-DD HH:mm:ss'));
   }
 
+  // runner function to:
   // get all inventory items, staff and customers and
   // initialise them by setting state on componentDidMount()
   componentDidMount() {
@@ -95,7 +99,7 @@ class App extends Component {
   }
 
   getAvailableInventory() {
-    axios.get('http://localhost:8080/inventory/all')
+    axios.get('http://18.116.176.176:8080/inventory/all')
       .then(response => {
         this.setState({ inventoryPieces: response.data });
       })
@@ -105,7 +109,7 @@ class App extends Component {
   }
 
   getCustomers() {
-    axios.get('http://localhost:8080/customer/all')
+    axios.get('http://18.116.176.176:8080/customer/all')
       .then(response => {
         this.setState({ customerPieces: response.data });
       })
@@ -115,7 +119,7 @@ class App extends Component {
   }
 
   getStaff() {
-    axios.get('http://localhost:8080/staff/all')
+    axios.get('http://18.116.176.176:8080/staff/all')
       .then(response => {
         this.setState({ staffPieces: response.data });
       })
@@ -125,7 +129,7 @@ class App extends Component {
   }
 
   getOrders() {
-    axios.get('http://localhost:8080/order/all')
+    axios.get('http://18.116.176.176:8080/order/all')
       .then(response => {
         this.setState({ orderPieces: response.data });
       })
@@ -134,8 +138,9 @@ class App extends Component {
       });
   }
 
+  // handle order submit and confirmation modal
   submitOrder() {
-    axios.post('http://localhost:8080/order', {
+    axios.post('http://18.116.176.176:8080/order', {
       rentalHours: this.state.rentalHours,
       rentalDays: this.state.rentalDays,
       cost: this.state.cost,
@@ -162,6 +167,7 @@ class App extends Component {
     });
   }
 
+  // clear all state values 
   clearStateValues() {
     this.setState({
       inventoryPieces: [],
@@ -186,6 +192,8 @@ class App extends Component {
     });
   }
 
+  // runner function to:
+  // handle order submisssion cancel
   handleCancel() {
     this.clearStateValues();
     this.getAvailableInventory();
@@ -194,6 +202,7 @@ class App extends Component {
     this.props.history.push('/');
   }
 
+  // handle modal close
   handleModalClose() {
     this.setState({ showModal: false });
     this.props.history.push('/');

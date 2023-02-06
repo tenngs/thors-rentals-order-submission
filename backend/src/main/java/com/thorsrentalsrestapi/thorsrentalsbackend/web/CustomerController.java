@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thorsrentalsrestapi.thorsrentalsbackend.entity.Customer;
 import com.thorsrentalsrestapi.thorsrentalsbackend.service.CustomerService;
 
+// allow frontend to list all customers
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://18.116.176.176")
 @RequestMapping("/customer")
 
 public class CustomerController {

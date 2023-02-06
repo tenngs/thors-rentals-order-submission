@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
 import "./StaffTable.css";
 import TopBar from './TopBar';
 

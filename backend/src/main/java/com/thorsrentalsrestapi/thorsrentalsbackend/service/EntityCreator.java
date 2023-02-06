@@ -26,6 +26,7 @@ public class EntityCreator {
     @Autowired
     private InventoryRepository inventoryRepository;
 
+    // creates 5 staff test entities
     @Transactional
     public void createStaffTestEntities() {
         try {
@@ -52,6 +53,7 @@ public class EntityCreator {
         }
     }
 
+    // creates 5 customer test entities
     @Transactional
     public void createCustomerTestEntities() {
 
@@ -74,6 +76,7 @@ public class EntityCreator {
         }
     }
 
+    // creates 5 ski, snowboard and ATV test entities
     @Transactional
     public void createInventoryTestEntities() {
 
@@ -118,6 +121,7 @@ public class EntityCreator {
         }
     }
 
+    // runner function for all test entities
     public void CreateTestEntities() {
         createStaffTestEntities();
         createCustomerTestEntities();

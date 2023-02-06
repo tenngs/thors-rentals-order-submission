@@ -12,7 +12,6 @@ class CustomersTable extends Component {
         this.handleRowClick = this.handleRowClick.bind(this);
     }
 
-
     handleRowClick(id, selectedFirstName, selectedSurname, selectedEmail) {
         if (!(this.state.rowClicked))
         {
