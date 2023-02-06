@@ -84,9 +84,17 @@ TL;DR Full-stack apps are popular and I wanted show people that I can develop th
 ### Customers Page with a Customer Selected
 ![image](https://user-images.githubusercontent.com/85033252/217075581-14faf9ab-f707-4b58-86d2-8fe03dae006e.png)
 
+### Staff Member Page with a Staff Member Selected
+![image](https://user-images.githubusercontent.com/85033252/217075902-2c1aa304-71e6-4df7-af53-351dd22d47af.png)
 
+### Rental Duration Page 
+![image](https://user-images.githubusercontent.com/85033252/217076056-6b025751-4beb-4e1f-acac-d6eaaf45dffb.png)
 
+### Rental Review Page with Relevant Rental Details Presented 
+![image](https://user-images.githubusercontent.com/85033252/217076177-0efc4ee7-8619-48ce-a1a5-2a7ac4163dc5.png)
 
+### Modal Confirming to a User that an Order is Submitted 
+![image](https://user-images.githubusercontent.com/85033252/217076329-d35eb38c-2ace-422b-ba09-4ebe6248647a.png)
 
 ![](Images/thors-receive-item.gif)<br><br>
 
