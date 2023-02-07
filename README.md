@@ -64,6 +64,7 @@ I wanted to create a three-tier architecture full-stack application to further s
 ## Let's have a look-see, shall we?
 
 <div align="center">
+ 
 ### Landing Page
 ![image](https://user-images.githubusercontent.com/85033252/217074193-7b312eae-4a17-4a20-86cd-d339434c091a.png)
  
