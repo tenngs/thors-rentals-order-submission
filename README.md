@@ -86,7 +86,7 @@ I wanted to create a three-tier architecture full-stack application to further s
 ### Rental Review 
 ![image](https://user-images.githubusercontent.com/85033252/217076177-0efc4ee7-8619-48ce-a1a5-2a7ac4163dc5.png)
 
-### Confirmation modal 
+### Confirmation Modal 
 ![image](https://user-images.githubusercontent.com/85033252/217076329-d35eb38c-2ace-422b-ba09-4ebe6248647a.png)
 </div>
  
