@@ -66,20 +66,28 @@ I wanted to create a three-tier architecture full-stack application to further s
 <div align="center">
 ### Landing Page
 ![image](https://user-images.githubusercontent.com/85033252/217074193-7b312eae-4a17-4a20-86cd-d339434c091a.png)
+ 
 ### View All Orders
 ![image](https://user-images.githubusercontent.com/85033252/217074569-593cdf19-914c-4fc4-b2aa-0c2ae5efc685.png)
+ 
 ### View Inventory
 ![image](https://user-images.githubusercontent.com/85033252/217075453-413a9e7c-0caf-4cde-8c8d-0f9d63281a75.png)
+ 
 ### Customers
 ![image](https://user-images.githubusercontent.com/85033252/217075581-14faf9ab-f707-4b58-86d2-8fe03dae006e.png)
+ 
 ### Staff Members
 ![image](https://user-images.githubusercontent.com/85033252/217075902-2c1aa304-71e6-4df7-af53-351dd22d47af.png)
+ 
 ### Rental Duration
 ![image](https://user-images.githubusercontent.com/85033252/217076056-6b025751-4beb-4e1f-acac-d6eaaf45dffb.png)
+ 
 ### Rental Review 
 ![image](https://user-images.githubusercontent.com/85033252/217076177-0efc4ee7-8619-48ce-a1a5-2a7ac4163dc5.png)
+
 ### Confirmation modal 
 ![image](https://user-images.githubusercontent.com/85033252/217076329-d35eb38c-2ace-422b-ba09-4ebe6248647a.png)
 </div>
+ 
 ## Possible additions
 Possible added features to the application include login and registration capability, HTTPS support, more robust security features developed in Java Spring Boot Security, deleting orders, looking up order by Order ID and so on. The reason that I did not implement these features is that I wanted to make demo three-tiered architecture full stack application that includes the frontend, backend, database and communication betweeen the three. 
