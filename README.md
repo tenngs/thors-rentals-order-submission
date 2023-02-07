@@ -54,8 +54,8 @@ Thors Rentals Order Submission application provides a rental shop employee a mod
 TL;DR select equipment, customer, employee in charge of the rental and calculate rental cost and return datetime.
 
 ## How does it do it?
-The application's Java Spring Boot backend creates inventory items, customers and employees on application's first startup to the MySql database utilised by the application. Once the user navigates to the application's website that is deployed in AWS public cloud utilising Docker, the user is presented an user interface created in React to select whether to view all submitted orders or to submit a new order. If a user chooses to submit a new order, the user is prompted to select the inventory item, customer, employee in charge of the rental and to enter the rental duration. Once these details are entered and a user confirms that the order entered has the correct information in it, the order is saved in a MySql database from which it can be viewed by selecting 'View All Orders' from the landing page.  
-<br><br>
+The application's Java Spring Boot backend creates inventory items, customers and employees on application's first startup to the MySql database utilised by the application. Once the user navigates to the application's website that is deployed in AWS public cloud utilising Docker, the user is presented an user interface created in React to select whether to view all submitted orders or to submit a new order. If a user chooses to submit a new order, the user is prompted to select the inventory item, customer, employee in charge of the rental and to enter the rental duration. Once these details are entered and a user confirms that the order entered has the correct information in it, the order is saved in a MySql database from which it can be viewed by selecting 'View All Orders' from the landing page. <br><br>
+
 TL;DR React UI interacts with MySQL database and a Java Spring Boot backend deployed in AWS utilising Docker.
 
 ## OK, but why?
