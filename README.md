@@ -38,14 +38,14 @@
 - [How does it do it?](#How-does-it-do-it)
 - [OK, but why?](#ok-but-why)
 - [Let's have a look-see, shall we?](#lets-have-a-look-see-shall-we)
-   - [Landing page](#Landing-Page)
-   - [View all orders](#view-all-orders)
-   - [View inventory](#view-inventory)
+   - [Landing Page](#Landing-Page)
+   - [View All Orders](#view-all-orders)
+   - [View Inventory](#view-inventory)
    - [Customers](#customers)
-   - [Staff members](#staff-members)
-   - [Rental duration](#rental-duration)
-   - [Rental review](#rental-review)
-   - [Confirmation modal](#confirmation-modal)
+   - [Staff Members](#staff-members)
+   - [Rental Duration](#rental-duration)
+   - [Rental Review](#rental-review)
+   - [Confirmation Modal](#confirmation-modal)
   
  
  
