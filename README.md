@@ -38,7 +38,7 @@
 - [How does it do it?](#How-does-it-do-it)
 - [OK, but why?](#ok-but-why)
 - [Let's have a look-see, shall we?](#lets-have-a-look-see-shall-we)
-   - [Main menu](#main-menu)
+   - [Landing page](#Landing-Page)
    - [Statistics menu](#statistics-menu)
    - [Initiating ATV rental](#initiating-atv-rental)
    - [Receiving ATV back from loan](#receiving-atv-back-from-loan)
@@ -65,7 +65,6 @@ TL;DR React UI interacts with MySQL database and a Java Spring Boot backend depl
 
 ## OK, but why?
 I wanted to create a three-tier architecture full-stack application to further showcase my skills.<br><br>
-TL;DR Full-stack apps are popular and I wanted show people that I can develop them.
 
 ## Let's have a look-see, shall we?
 
