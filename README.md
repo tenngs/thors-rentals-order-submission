@@ -50,7 +50,7 @@
 
 
 ## What does it do?
-Thors Rentals Order Submission application provides a rental shop employee a modern application to submit rental orders by selecting an inventory item to be rented, a customer that is renting the equipment and an employee who is responsible for the rental order. It further allows an employee to specify the rental duration and opportunity to view all submitted rental orders. Additionally, the system automatically calculates the cost of the rental and the date and time when the equipment id due to be returned from loan. <br><br>
+Thors Rentals Order Submission application provides a rental shop employee a modern application to submit rental orders by selecting an inventory item to be rented, a customer that is renting the equipment and an employee who is responsible for the rental order. It further allows an employee to specify the rental duration and opportunity to view all submitted rental orders. Additionally, the system automatically calculates the cost of the rental and the date and time when the equipment is due to be returned from loan. <br><br>
 TL;DR select equipment, customer, employee in charge of the rental and calculate rental cost and return datetime.
 
 ## How does it do it?
