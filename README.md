@@ -64,7 +64,6 @@ I wanted to create a three-tier architecture full-stack application to further s
 ## Let's have a look-see, shall we?
 
 <div align="center">
-
 ### Landing Page
 ![image](https://user-images.githubusercontent.com/85033252/217074193-7b312eae-4a17-4a20-86cd-d339434c091a.png)
 ### View All Orders
@@ -81,34 +80,6 @@ I wanted to create a three-tier architecture full-stack application to further s
 ![image](https://user-images.githubusercontent.com/85033252/217076177-0efc4ee7-8619-48ce-a1a5-2a7ac4163dc5.png)
 ### Confirmation modal 
 ![image](https://user-images.githubusercontent.com/85033252/217076329-d35eb38c-2ace-422b-ba09-4ebe6248647a.png)
-
 </div>
-
-## Dependencies
-Apart from the provided C++ and ASCII Art files, this project requires the following:
-1) MinGW
-2) gcc compiler (built with MinGW)
-3) MinGW threads
-4) Sqlite3
-
-## How to install dependencies for Windows<br>
-### MinGW & gcc compiler
-1) As it is a slightly lengthy process, please check out this video: https://www.youtube.com/watch?v=Zcy981HhGw0&t=80s<br>
-### MinGW threads
-1) I have included the required mingw.thread.h file in the repo. However, if you would like to get it yourself, please clone this repo: https://github.com/meganz/mingw-std-threads.git
-### Sqlite3 
-1) Download precompiled binaries for Windows (32 or 64 bit) from https://www.sqlite.org/download.html
-2) Place binaries into a directory. For example: C:\sqlite3
-3) Add the directory where binaries were placed in step 2) to PATH (please check out https://www.youtube.com/watch?v=gb9e3m98avk if not familiar)
-4) Download "sqlite amalgation" C source code from  https://www.sqlite.org/download.html (at the time of writing, first link from top to bottom)
-5) Place sqlite3.c and sqlite3.h from "sqlite amalgation" download into a C++ project directory
-6) Compile using: gcc sqlite3.c -c to produce sqlite3.o file
-### Notes
-1) I have provided the required sqlite3.o and sqlite3.h files in the repo. However, it is not guaranteed that they will work on your computer just because they work on mine. If in doubt, please follow the installation steps above to create your own.
-2) Sadly, I am unable to provide build and dependency details for Mac OS / Linux
-## Compiling
-Please compile the project using g++ *.cpp sqlite3.o -LC:\sqlite3<br>
-(where: C:\sqlite3 is the directory for sqlite that
-was added to PATH)
 ## Possible additions
-Adding more functionality such as adding different types of equipment to the inventory, removing or banning customers, adding staff (staff without system access) from the UI, sending an invoice via email to a customer could be accomplished.
+Possible added features to the application include login and registration capability, HTTPS support, more robust security features developed in Java Spring Boot Security, deleting orders, looking up order by Order ID and so on. The reason that I did not implement these features is that I wanted to make demo three-tiered architecture full stack application that includes the frontend, backend, database and communication betweeen the three. 
