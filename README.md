@@ -39,7 +39,7 @@
 - [OK, but why?](#ok-but-why)
 - [Let's have a look-see, shall we?](#lets-have-a-look-see-shall-we)
    - [Landing page](#Landing-Page)
-   - [Statistics menu](#statistics-menu)
+   - [View all orders page](#view-all-orders-page)
    - [Initiating ATV rental](#initiating-atv-rental)
    - [Receiving ATV back from loan](#receiving-atv-back-from-loan)
 - [Dependencies](#dependencies)
