@@ -91,4 +91,4 @@ I wanted to create a three-tier architecture full-stack application to further s
 </div>
  
 ## Possible additions
-Possible added features to the application include login and registration capability, HTTPS support, more robust security features developed in Java Spring Boot Security, deleting orders, looking up order by Order ID and so on. The reason that I did not implement these features is that I wanted to make demo three-tiered architecture full stack application that includes the frontend, backend, database and communication betweeen the three. 
+Possible added features to the application include login and registration capability, HTTPS support, more robust security features developed in Java Spring Boot Security, deleting orders, looking up order by Order ID and so on. The reason that I did not implement these features is that I wanted to make demo three-tiered architecture full stack application that includes the frontend, backend, database and communication between the three. 
