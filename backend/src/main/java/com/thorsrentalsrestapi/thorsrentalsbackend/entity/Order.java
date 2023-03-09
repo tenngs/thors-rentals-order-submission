@@ -63,7 +63,7 @@ public class Order {
     @JoinColumn(name = "sales_rep_id", referencedColumnName = "id")
     private Staff staff;
 
-    // 2) Many-to-One with Customer - gets customer_id from
+    // 3) Many-to-One with Customer - gets customer_id from
     // Customer id
     @ManyToOne
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
